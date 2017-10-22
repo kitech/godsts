@@ -86,3 +86,8 @@ func (m *Map) String() string {
 	defer m.mu.RUnlock()
 	return m.nts.String()
 }
+
+func (m *Map) Has(key interface{}) bool {
+	_, has := m.Get(key)
+	return has
+}
